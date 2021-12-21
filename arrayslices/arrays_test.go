@@ -39,4 +39,24 @@ func TestArraySlices(t *testing.T) {
 
 		assertSlices(got, want, t)
 	})
+
+	t.Run("Sum of tails", func(t *testing.T) {
+		a := []int{1, 2}
+		b := []int{5, 3}
+
+		want := []int{2, 3}
+		got := arrayslices.SumAllTails(a, b)
+
+		assertSlices(want, got, t)
+	})
+
+	t.Run("Sum of tailsl with one element slices", func(t *testing.T) {
+		a := []int{1}
+		b := []int{2}
+
+		var want []int
+		got := arrayslices.SumAllTails(a, b)
+
+		assertSlices(want, got, t)
+	})
 }
