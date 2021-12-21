@@ -8,14 +8,6 @@ import (
 )
 
 func Test(t *testing.T) {
-	t.Run("Static Hello", func(t *testing.T) {
-		want := "Hello, World!"
-		got := hello.Hello()
-
-		if got != want {
-			t.Errorf("Test failed, got:%v , expected:%v", got, want)
-		}
-	})
 
 	t.Run("Test Greeting", func(t *testing.T) {
 		name := "Pranav"
@@ -25,5 +17,29 @@ func Test(t *testing.T) {
 		if got != want {
 			t.Errorf("Test failed, expected:%v got:%v", want, got)
 		}
+	})
+
+	t.Run("In Spanish", func(t *testing.T) {
+		name := "Jose"
+		want := "Hola, " + name + "!"
+
+		got := hello.Hello(name, "spanish")
+
+		if got != want {
+			t.Errorf("Test failed, got:%v, want:%v", got, want)
+		}
+
+	})
+
+	t.Run("In French", func(t *testing.T) {
+		name := "Jean"
+		want := "Mercy, " + name + "!"
+
+		got := hello.Hello(name, "french")
+
+		if got != want {
+			t.Errorf("Test failed, got:%v, want:%v", got, want)
+		}
+
 	})
 }
