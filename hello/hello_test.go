@@ -19,7 +19,7 @@ func Test(t *testing.T) {
 
 	t.Run("Test Greeting", func(t *testing.T) {
 		name := "Pranav"
-		want := fmt.Sprintf("Hello, %v!", name)
+		want := fmt.Sprintf(hello.HELLO_TEMPLATE, name)
 		got := hello.Greet(name)
 
 		if got != want {
